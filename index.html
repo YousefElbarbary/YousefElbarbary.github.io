@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yousef Elbarbary</title>
+<meta name="description" content="Yousef Elbarbary, Communications and Electronics Engineering graduate from Alexandria University. Machine learning and NLP projects.">
+<style>
+:root{
+  --bg:#f6f3ee; --card:#fffdf9; --ink:#1f2421; --muted:#68706b; --line:#e2ddd3;
+  --accent:#9a4a2b; --accent-soft:#f1e3da; --code:#efeae1;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#171a18; --card:#1e2220; --ink:#ece8e0; --muted:#9aa29c; --line:#2d3330;
+        --accent:#e0936f; --accent-soft:#2b2420; --code:#262b28}
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:72px 28px 56px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:64px}
+aside{position:sticky;top:72px;align-self:start}
+h1{font:600 2.1rem/1.15 var(--serif);letter-spacing:-.01em;margin:0 0 14px}
+.role{color:var(--muted);margin:0 0 24px;font-size:.98rem}
+.contact{list-style:none;margin:0;padding:0;font-size:.95rem}
+.contact li{padding:9px 0;border-top:1px solid var(--line)}
+.contact li:last-child{border-bottom:1px solid var(--line)}
+.contact span{display:block;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.contact a{word-break:break-all}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:30px 32px;margin:0 0 20px}
+.card.plain{background:transparent;border-style:dashed}
+h2{font:600 1.45rem/1.25 var(--serif);margin:0 0 6px;letter-spacing:-.005em}
+.meta{margin:0 0 16px;color:var(--muted);font-size:.88rem}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:2px 8px;border-radius:4px;margin-right:8px;vertical-align:1px}
+p{margin:0 0 14px}
+p:last-child{margin-bottom:0}
+.part{border-left:2px solid var(--accent);padding-left:14px;margin:18px 0}
+table{width:100%;border-collapse:collapse;margin:20px 0 10px;font-size:.93rem;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:9px 12px 9px 0;border-bottom:1px solid var(--line)}
+th{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+tbody tr:first-child td:nth-child(-n+3){font-weight:600}
+tbody tr:first-child td:first-child{color:var(--accent)}
+.note{color:var(--muted);font-size:.9rem}
+ul.other{margin:0;padding:0;list-style:none}
+ul.other li{padding:10px 0;border-top:1px solid var(--line)}
+ul.other li:first-child{border-top:0;padding-top:0}
+.label{font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+footer{grid-column:2;color:var(--muted);font-size:.85rem;padding-top:8px}
+@media (max-width:820px){
+  .wrap{display:block;padding:44px 20px 40px}
+  aside{position:static;margin-bottom:36px}
+  h1{font-size:1.9rem}
+  .card{padding:22px 20px;border-radius:8px}
+  footer{padding-top:16px}
+  table{font-size:.84rem}
+  th,td{padding-right:8px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <aside>
+    <h1>Yousef Elbarbary</h1>
+    <p class="role">Communications and Electronics Engineering graduate, Alexandria University. I'm looking for a junior role in machine learning or NLP.</p>
+    <ul class="contact">
+      <li><span>GitHub</span><a href="https://github.com/YousefElbarbary">github.com/YousefElbarbary</a></li>
+      <li><span>Email</span><a href="mailto:ysf.elbarbary@gmail.com">ysf.elbarbary@gmail.com</a></li>
+      <li><span>Based in</span>Alexandria, Egypt</li>
+    </ul>
+  </aside>
+
+  <main>
+    <article class="card">
+      <h2>Detecting prompt injection with NLP</h2>
+      <p class="meta"><span class="tag">Thesis</span>Graduation thesis, team of seven, 2025 &middot; <a href="https://github.com/YousefElbarbary/prompt-injection-detection-and-mitigation">notebooks on GitHub</a></p>
+      <p>Prompt injection is when text sent to a language model tries to override its instructions. We treated detection as a text classification problem and compared five models: LSTM, BiLSTM, BERT, DeBERTa and MiniLM.</p>
+      <p class="part">My part: I trained and fine-tuned the BERT and LSTM models.</p>
+      <p>The data came from several sources plus 17,000 prompts we generated and labelled ourselves. After cleaning, about 265,000 unique prompts were left. Our first models scored only 60 to 70% because the training and test prompts were written in different styles, which we confirmed by plotting their embeddings. Rebuilding the splits fixed it.</p>
+      <table>
+        <thead><tr><th>Model</th><th>Accuracy</th><th>F1</th><th>Time per prompt</th></tr></thead>
+        <tbody>
+          <tr><td>BERT</td><td>89.35%</td><td>92.71%</td><td>9.5 to 11 ms</td></tr>
+          <tr><td>LSTM</td><td>84.84%</td><td>89.48%</td><td>1.5 to 2 ms</td></tr>
+          <tr><td>DeBERTa</td><td>83.80%</td><td>88.48%</td><td>3 to 5 ms</td></tr>
+          <tr><td>BiLSTM</td><td>81.84%</td><td>86.98%</td><td>0.6 to 1 ms</td></tr>
+          <tr><td>MiniLM</td><td>81.50%</td><td>86.64%</td><td>1 to 2 ms</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Scores on an unseen test set. All five models scored 96 to 99% in training, so they did worse on new data. Precision stayed high (98 to 99.9%) but recall was lower, around 77 to 86%, so some attacks got through.</p>
+      <p>The final system checks a prompt against a vector database of known attacks first, then passes anything unclear to MiniLM. We picked MiniLM because it takes 1 to 2 ms per prompt, against 9.5 to 11 ms for BERT. It runs in a web app that also shows the response from a live language model.</p>
+    </article>
+
+    <article class="card">
+      <h2>Automatic parking garage</h2>
+      <p class="meta"><span class="tag">Hardware</span>ESP32 project</p>
+      <p>A garage gate that checks for free space before it opens. It detects a car at the gate and looks for an open spot. If there is one, the gate opens. If not, it stays shut. A seven segment display at the gate shows how many spots are free, and a mobile app lets the garage manager see how many cars are inside.</p>
+    </article>
+
+    <article class="card">
+      <h2>Downloads Organizer</h2>
+      <p class="meta"><span class="tag">Python</span>v0.1.0, proof of concept &middot; <a href="https://github.com/YousefElbarbary/downloads-organizer">GitHub</a></p>
+      <p>A small tool that sorts the files in a folder into categories by extension. The categories live in a YAML file, so I can change them without touching the code. It sends unknown extensions to an Others folder and renames duplicates (file.pdf, file (1).pdf and so on). I built it for fun, and split it into separate modules for config, scanning, classifying and moving files.</p>
+    </article>
+
+    <article class="card">
+      <h2>Encryption with XOR and NOT</h2>
+      <p class="meta"><span class="tag">C</span>Group project, first year at university &middot; <a href="https://github.com/marmoh2002/XOR-NOT-Final-project">GitHub</a></p>
+      <p>A console program that encrypts and decrypts text. You type a phrase and pick encrypt or decrypt. It can scramble the text two ways: XOR with a number key, or flipping every bit (NOT). The decrypt side reverses it.</p>
+      <p>It builds the string with dynamic memory, so there is no fixed length limit, and it checks the user's input and failed memory allocations. The repo has a flowchart, and the README lists what we would add next: a GUI, a keyword as the key, saving to a file, and encrypting whole files.</p>
+      <p class="part">My part: I wrote the code together with one teammate.</p>
+    </article>
+
+    <section class="card plain">
+      <p class="label">Other work</p>
+      <ul class="other">
+        <li>Kaggle notebooks: Titanic, Spaceship Titanic and a house price predictor.</li>
+        <li><a href="https://github.com/YousefElbarbary/Word-Counter">Word Counter</a>, from when I started programming.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>Yousef Elbarbary &middot; Alexandria, Egypt</footer>
+</div>
+</body>
+</html>
